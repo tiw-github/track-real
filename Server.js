@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const socketIO = require('socket.io');
 
 const fakeTracking = require('./FakeTracking');
-
+const port = process.env.PORT || 3000;
 // Get config for node environment
 // Check `nodemon.json` for details
 const ENV = process.env;
@@ -35,8 +35,8 @@ app.get('/', (req, res) => {
 });
 
 
-server.listen(CONFIG.PORT, () => {
-	console.log('Server is running at port: ' + CONFIG.PORT);
+server.listen(port, () => {
+	console.log('Server is running at port: ' + port);
 });
 
 // Run fake tracking location
